@@ -34,6 +34,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.sinopacific.pvs.live"
+        },
+        "cordova-android-support-gradle-release": {
+            "PACKAGE_NAME": "com.sinopacific.pvs.live"
         }
     },
     "dependent_plugins": {}

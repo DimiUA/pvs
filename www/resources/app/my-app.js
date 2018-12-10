@@ -24,6 +24,8 @@ function getPlusInfo(){
         localStorage.PUSH_APP_KEY = BuildInfo.packageName;
         localStorage.PUSH_APPID_ID = BuildInfo.packageName; 
         localStorage.DEVICE_TYPE = device.platform;   
+
+        localStorage.PUSH_DEVICE_TOKEN = uid;
     }else{        
             if(!localStorage.PUSH_MOBILE_TOKEN)
             localStorage.PUSH_MOBILE_TOKEN = uid;
@@ -63,7 +65,8 @@ function onDeviceReady(){
         StatusBar.styleDefault();
     } 
 
-    setupPush();
+    //setupPush();
+    //localStorage.PUSH_DEVICE_TOKEN = '';
 
 	getPlusInfo(); 
 

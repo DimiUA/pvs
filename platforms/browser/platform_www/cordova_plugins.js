@@ -640,7 +640,8 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-buildinfo": "2.0.2",
     "cordova-plugin-splashscreen": "5.0.2",
-    "cordova-plugin-camera": "4.0.3"
+    "cordova-plugin-camera": "4.0.3",
+    "cordova-android-support-gradle-release": "2.0.1"
 }
 // BOTTOM OF METADATA
 });
