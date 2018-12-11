@@ -37,9 +37,10 @@
     
     <plugin name="cordova-android-support-gradle-release" source="npm" />
 
-    <plugin name="phonegap-plugin-push" source="npm" spec="2.1.2">
-        <variable name="SENDER_ID" value="106187216531" />
-    </plugin>
+    <plugin name="phonegap-plugin-push" source="npm" spec="2.1.2" />
+        
+        
+ 
     <platform name="android">
       <resource-file src="google-services.json" target="google-services.json" />
     </platform>
