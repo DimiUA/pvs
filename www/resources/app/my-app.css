@@ -35,8 +35,32 @@ body.with-panel-left-reveal .panel-overlay{
 .dislay_none{
 	display: none;
 }
+.text-transform-uppercase{
+	text-transform: uppercase;
+}
 .m-0{
 	margin: 0 !important;
+}
+.mt-0{
+	margin-top: 0 !important;
+}
+.mr-0{
+	margin-right: 0 !important;
+}
+.mb-0{
+	margin-bottom: 0 !important;
+}
+.mr-8{
+	margin-right: 8px;
+}
+.mt-8{
+	margin-top: 8px;
+}
+.pl-0{
+	padding-left: 0!important;
+}
+.pr-0{
+	padding-right: 0!important;
 }
 .navbar_title{
 	display: inline-block !important;
@@ -122,7 +146,8 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 .theme-dealer .input-field.focus-state:after, .theme-dealer .input-field.not-empty-state:after, .theme-dealer .item-input-field.focus-state:after, .theme-dealer .item-input-field.not-empty-state:after{
 	background-color: rgba(255,255,255,.12);
 }
-.theme-dealer .no-after.input-field.focus-state:after, .theme-dealer .no-after.input-field.not-empty-state:after, .theme-dealer .no-after.item-input-field.focus-state:after, .theme-dealer .no-after.item-input-field.not-empty-state:after, .theme-dealer .list-block.media-list .item-content .item-inner.no-after:after{
+.theme-dealer .no-after.input-field.focus-state:after, .theme-dealer .no-after.input-field.not-empty-state:after, .theme-dealer .no-after.item-input-field.focus-state:after, .theme-dealer .no-after.item-input-field.not-empty-state:after, .theme-dealer .list-block.media-list .item-content .item-inner.no-after:after,
+.theme-dealer .layout-dark .item-inner:not(.focus-state):not(.not-empty-state) .no-after.input-field:after, .theme-dealer .layout-dark .item-inner:not(.focus-state):not(.not-empty-state) .no-after.item-input-field:after{
 	background-color: rgba(255,255,255,0);
 }
 
@@ -166,6 +191,40 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 .state-3{
 	color: #E5425A !important;
 }
+
+.page-content.with-bottom-button
+{
+	padding-bottom: 68px;
+}
+.bottom-button-wrapper{
+	position: fixed;
+	z-index: 20;
+	bottom: 0;
+	top: auto;	
+    
+    width: 100%;
+    box-sizing: border-box;
+}
+	.bottom-button-content{
+		position: relative;
+		padding: 16px;
+    	box-sizing: border-box;
+	}
+	.bottom-button-content:before{
+		content: '';
+	    position: absolute;
+	    left: 0;
+	    bottom: auto;
+	    right: auto;
+	    top: 0;
+	    height: 1px;
+	    width: 100%;
+	    background-color: rgba(119,119,119,.2);
+	    display: block;
+	    z-index: 15;
+	    -webkit-transform-origin: 50% 100%;
+	    transform-origin: 50% 100%;
+	}
 /* INDEX PAGE */
 .menu_header{
 	height: 160px;
@@ -225,6 +284,11 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 	font-size: 20px;
 }
 
+.label-checkbox .item-after .icon,
+label.label-checkbox .item-after i.icon-form-checkbox{
+	margin-right: 0;
+}
+
 .menu_wrapper{
 	position: relative;
     min-height: 100%;
@@ -232,7 +296,7 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 .menu{
 	/* margin: 0; */	
 	margin-top: 16px;
-	padding-bottom: 60px;
+	/* padding-bottom: 60px; */
 	margin-bottom: 0;
 }
 	.menu ul:before,
@@ -268,19 +332,36 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 			.menu .item-inner:after{
 				background-color: transparent !important;
 			}
-		.menu_remainings{
-			font-size: 16px;
-			text-align: center;
-			padding: 12px 4px;
-			color: #232323;
-			background: #E8EAF6;
-
+		.menu_bottom{
 			position: absolute;
     		bottom: 0;
     		left: 0;
     		width: 100%;
     		box-sizing: border-box;
+    		background: #fff;
 		}
+			.menu_call_button{
+				font-size: 14px;
+				    margin: 16px;
+			}
+				.menu_call_button i{
+					vertical-align: middle;
+					font-size: 20px;
+					margin-right: 8px;
+				}
+			.menu_remainings{
+				font-size: 16px;
+				text-align: center;
+				padding: 12px 4px;
+				color: #232323;
+				background: #E8EAF6;
+
+				
+			}
+
+.menu_wrapper.without-call-button .menu{
+	padding-bottom: 64px;
+}
 
 /* .bw_top_shadow{
 	background: #fff !important;
@@ -291,6 +372,18 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 	.navbar a.link, .subnavbar a.link, .toolbar a.link{
 		color: #000;
 	}
+
+ 
+.list-block .smart-select.smart-select-custom .item-after{
+	max-width: 100%;
+    margin-left: 0;
+    font-size: 16px;
+    color: #fff;
+
+    padding: 6px 0;
+    box-sizing: border-box;
+    
+}
 
 .theme-dealer .actions-modal-label:after{
 	content: '';
@@ -655,7 +748,8 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 
 }
 
-	.user_recharge_credit_page .content-block-title{
+	.user_recharge_credit_page .content-block-title,
+	.reports_page .content-block-title{
 		font-size: 24px;
 		font-size: 16px;
     	color: #fff;
@@ -932,7 +1026,9 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 			.theme-dealer .list-block.list-playback-settings .input-field.focus-state:after, 
 			.theme-dealer .list-block.list-playback-settings .input-field.not-empty-state:after, 
 			.theme-dealer .list-block.list-playback-settings .item-input-field.focus-state:after, 
-			.theme-dealer .list-block.list-playback-settings .item-input-field.not-empty-state:after{
+			.theme-dealer .list-block.list-playback-settings .item-input-field.not-empty-state:after,
+			.theme-dealer .list-block .picker-el-wrapper .input-field.focus-state:after, 
+			.theme-dealer .list-block .picker-el-wrapper .item-input-field.not-empty-state:after{
 				background-color: rgba(255,255,255,0);
 			}
 			.theme-dealer .list-block.media-list .item-with-arrow .item-inner:after{
@@ -1356,8 +1452,12 @@ html:not(.watch-active-state) .button.btn_login.button-fill:active{
 			/* padding: 12px 16px 0; */
 			text-transform: uppercase;
 		}
+		.popover .list-block .item-divider{
+			color: rgba(0,0,0,.54);
+		}
 		.list-block .item-divider:before, 
-		.list-block .list-group-title:before{
+		.list-block .list-group-title:before,
+		.list-block .with-top-divider:before{
 			content: '';
 		    position: absolute;
 		    left: 0;
@@ -1756,4 +1856,24 @@ tossing
     	position: relative;
     	background: transparent;
     	padding: 12px 0 0;
+	}
+
+	.modal-checkbox{
+		margin-top: 8px;
+		margin-bottom: 0;
+	}
+	.modal-checkbox.list-block .item-content{
+		padding-left: 0;
+	}
+	.modal-checkbox.list-block .item-inner{
+		padding-right: 0;
+		margin-left: 0;
+	}
+
+
+	
+
+	.theme-dealer .list-block-modal .item-inner .item-input:after {
+		display: block;  
+		background-color: rgba(0,0,0,.12);     	
 	}

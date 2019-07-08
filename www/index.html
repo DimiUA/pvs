@@ -10,7 +10,7 @@
     <!-- Color theme for statusbar -->
     <!-- <meta name="theme-color" content="#2196f3"> -->
     <!-- Your app title -->
-    <title>PVS Live</title>
+    <title>PVS</title>
 
     <!-- Cropper Camer -->
     <link rel="stylesheet" href="resources/plugins/cropper/css/cropper.min.css" type="text/css" charset="utf-8"/>
@@ -121,14 +121,14 @@
                         <div class="item-title">{{@global.LANGUAGE.ALARM_MSG06}}</div>
                     </div>
                 </li>  
-                <li class="item-content list-panel-all close-panel item-link" id="menuRecharge">
+                <!-- <li class="item-content list-panel-all close-panel item-link" id="menuRecharge">
                   <div class="item-media">
                     <i class="f7-icons icon-menu-recharge"></i>
                   </div>
                   <div class="item-inner">
                     <div class="item-title">{{@global.LANGUAGE.MENU_MSG02}}</div>
                   </div>
-                </li>       
+                </li>        -->
                 <li class="item-content list-panel-all close-panel item-link" id="menuProfile">
                   <div class="item-media">
                     <i class="f7-icons icon-menu-profile"></i>
@@ -136,7 +136,23 @@
                   <div class="item-inner">
                     <div class="item-title">{{@global.LANGUAGE.MENU_MSG03}}</div>
                   </div>
-                </li>  
+                </li> 
+                <li class="item-content list-panel-all close-panel item-link" id="menuUserGuide">
+                    <div class="item-media">
+                        <i class="f7-icons icon-other-user-manual"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title">{{@global.LANGUAGE.MENU_MSG07}}</div>
+                    </div>
+                </li> 
+                <!-- <li class="item-content list-panel-all close-panel item-link" id="menuReports">
+                    <div class="item-media">
+                        <i class="f7-icons icon-menu-reports"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title">{{@global.LANGUAGE.MENU_MSG09}}</div>
+                    </div>
+                </li> -->
                 <li class="item-content list-panel-all close-panel item-link" id="menuSupport">
                     <div class="item-media">
                         <i class="f7-icons icon-menu-support"></i>
@@ -157,9 +173,15 @@
               </ul>
             </div>
           </div>
-          <div class="menu_remainings">
-            {{@global.LANGUAGE.COM_MSG32}}: <span class="remaining_counter">---</span>
+          <div class="menu_bottom">
+            <!-- <a href="tel:1300885461" target="_blank" class="external button button-fill bg-dealer button-big menu_call_button" style="display:none;">
+              <i class="f7-icons icon-other-call"></i> {{@global.LANGUAGE.MENU_MSG08}}
+            </a> -->
+            <!-- <div class="menu_remainings">
+              {{@global.LANGUAGE.COM_MSG32}}: <span class="remaining_counter">---</span>
+            </div> -->
           </div>
+            
         </div>
       </div>
     </script>
@@ -186,6 +208,7 @@
                                 <div class="right">
                                     <!-- <a href="#" class="link button_search" ><i class="f7-icons">search</i></a> -->
                                     <!-- <a href="#" class="link open-panel notification_button new_not" data-panel="right" ><i class="f7-icons">bell</i></a> -->
+                                    <a href="#" class="link sorting_button" ><i class="f7-icons icon-other-sort"></i></a> 
                                     <a href="#" class="link notification_button" ><i class="f7-icons icon-header-alarm"></i></a>
                                 </div>
                             </div>
@@ -223,7 +246,7 @@
     <script type="text/javascript" src="resources/libraries/framework7/js/framework7.min.js"></script>
      <!-- jquery libraries -->
     <script type="text/javascript" src="resources/libraries/jquery/jqury-2.2.4.min.js"></script>
-    <script type="text/javascript" src="resources/libraries/jquery/jquery.signalR-2.2.0.min.js"></script>
+<!--     <script type="text/javascript" src="resources/libraries/jquery/jquery.signalR-2.2.0.min.js"></script> -->
     <!-- Path to leaflet Library JS-->
     <script type="text/javascript" src="resources/libraries/leaflet/leaflet.js"></script>
     <!-- Moment -->
@@ -245,8 +268,8 @@
     <script type="text/javascript" src="resources/app/helper.js" ></script>
     <script type="text/javascript" src="resources/app/ProtocolHelpers.js" ></script>
     <script type="text/javascript" src="resources/app/languages.js" ></script>
-    <script type="text/javascript" src="resources/app/hubs.js"></script>
-    <script type="text/javascript" src="resources/app/HubPlus.js" ></script>
+  <!--   <script type="text/javascript" src="resources/app/hubs.js"></script>
+  <script type="text/javascript" src="resources/app/HubPlus.js" ></script> -->
     <script type="text/javascript" src="resources/app/my-app.js?version=0.2"></script>
 
     

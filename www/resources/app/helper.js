@@ -119,6 +119,7 @@ Protocol = {
     StatusNewEnum:{
         "Geolock" : 1,
         "Immobilise": 2,
+        "LockDoor": 4,
     },
     Helper: {
         getSpeedValue: function (speedUnit, speed) {
@@ -245,6 +246,7 @@ Protocol = {
         },
         getPositionType: function(type){
             var ret = "";
+            type ? type = parseInt(type,10) : '';
             switch (type){
                 case 0: case 1:
                     ret = "GPS";
@@ -271,6 +273,19 @@ Protocol = {
             return ret;
            
         },
+        getAlertNameByType: function(type){
+            var ret = "";
+            type ? type = parseInt(type,10) : '';
+            switch (type){ 
+                case 8:
+                    ret = LANGUAGE.ALARM_MSG12;    //InGeoFance
+                    break;
+                case 16:
+                    ret = LANGUAGE.ALARM_MSG13;     //OutGeoFance
+                    break;                    
+            }
+            return ret;  
+        },
         getDifferenceBTtwoDates: function(date1, date2){
             var ret = "";
             if (date1 && date2) {
@@ -286,8 +301,9 @@ Protocol = {
         },
         getGeoImmobState: function(val){            
             var ret = {
-                Geolock : false,
-                Immobilise : false
+                Geolock: false,
+                Immobilise: false,
+                LockDoor: false,
             };
             if (val) {
                 if ((parseInt(val) & 1) > 0) {        
@@ -295,6 +311,9 @@ Protocol = {
                 }
                 if ((parseInt(val) & 2) > 0) {        
                     ret.Immobilise = true; 
+                }
+                if ((parseInt(val) & 4) > 0) {        
+                    ret.LockDoor = true; 
                 }
             }            
             return ret;
@@ -686,6 +705,10 @@ Protocol = {
                         value: false,
                         state: 'state-0',
                     };
+                    ret.lockdoor = {
+                        value: false,
+                        state: 'state-0',
+                    };
                     if (asset.StatusNew) {                       
                         var geolockImmobSate = Protocol.Helper.getGeoImmobState(asset.StatusNew);
                         if (geolockImmobSate.Geolock) {
@@ -695,6 +718,10 @@ Protocol = {
                         if (geolockImmobSate.Immobilise) {
                             ret.immob.value = geolockImmobSate.Immobilise;
                             ret.immob.state = 'state-3'; 
+                        }
+                        if (geolockImmobSate.LockDoor) {
+                            ret.lockdoor.value = geolockImmobSate.LockDoor;
+                            ret.lockdoor.state = 'state-3'; 
                         }
                     }                   
                     
@@ -762,7 +789,15 @@ Protocol.Common = JClass({
         this.AlarmOptions = arg.AlarmOptions;
         this._FIELD_FLOAT8 = arg._FIELD_FLOAT8;
         this.StatusNew = arg.StatusNew;    
-        this._FIELD_INT2 = arg._FIELD_INT2;   
+        this._FIELD_INT2 = arg._FIELD_INT2;
+        this.GroupCode = arg.GroupCode;   
+        this.SolutionType = arg.SolutionType;
+        this.Registration = arg.Registration;
+        this.StockNumber = arg.StockNumber;
+        this.MaxSpeed = arg.MaxSpeed;
+        this.MaxSpeedAlertMode = arg.MaxSpeedAlertMode;
+
+        
     
     },
     initDeviceInfoEx:function(){},
