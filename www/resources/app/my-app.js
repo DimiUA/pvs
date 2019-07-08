@@ -226,7 +226,7 @@ var App = new Framework7({
     //pushState: true,       
     allowDuplicateUrls: true,
     sortable: false,
-    modalTitle: 'QuikTrak',
+    modalTitle: 'PVS Live',
     precompileTemplates: true,
     template7Pages: true,
     onAjaxStart: function(xhr) {
@@ -324,7 +324,9 @@ API_URL.URL_REPORT_THEFT = "https://forms.quiktrak.com.au/report-theft/?loginNam
 
 
 API_URL.URL_GET_BALANCE = API_DOMIAN3 + "Client/Balance?MajorToken={0}&MinorToken={1}";
-API_URL.URL_SET_IMMOBILISATION = API_DOMIAN4 + "asset/Relay?MajorToken={0}&MinorToken={1}&code={2}&state={3}";
+//API_URL.URL_SET_IMMOBILISATION = API_DOMIAN4 + "asset/Relay?MajorToken={0}&MinorToken={1}&code={2}&state={3}";
+API_URL.URL_SET_IMMOBILISATION = API_DOMIAN4 + "asset/RelayNoPay?MajorToken={0}&MinorToken={1}&code={2}&state={3}";
+
 API_URL.URL_SET_GEOLOCK = API_DOMIAN4 + "asset/GeoLock?MajorToken={0}&MinorToken={1}&code={2}&state={3}";
 API_URL.URL_SET_DOOR = API_DOMIAN4 + "asset/door?MajorToken={0}&MinorToken={1}&code={2}&state={3}";
 
